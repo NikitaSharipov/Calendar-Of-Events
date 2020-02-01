@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'User can observe calendat', "
+feature 'User can observe calendar', "
   In order to know current events
   As an unauthenticated user
   I'd like to be able to observ events in calendar" do

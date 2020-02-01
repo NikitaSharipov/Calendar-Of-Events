@@ -1,0 +1,8 @@
+= form_with url: events_path do |f|
+  p
+    = f.label :title, 'Your event title'
+    = f.text_field :title
+  p
+    = f.label :date, 'Creation date'
+    = f.date_field :date
+  p= f.submit 'Add event'
