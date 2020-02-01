@@ -2,8 +2,8 @@ require 'rails_helper'
 
 feature 'User can sign up', "
   As an unauthenticated user
-  I'd like to be able to sign up
-" do
+  I'd like to be able to sign up" do
+
   background do
     visit new_user_registration_path
   end
