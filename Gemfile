@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 gem 'slim'
+gem "simple_calendar", "~> 2.0"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

@@ -1,0 +1,5 @@
+= month_calendar attribute: :date, events: @events do |date, events|
+  = date
+  - events.each do |event|
+    .div
+      = event.title

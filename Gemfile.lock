@@ -192,6 +192,8 @@ GEM
       rubyzip (>= 1.2.2)
     shoulda-matchers (4.2.0)
       activesupport (>= 4.2.0)
+    simple_calendar (2.3.0)
+      rails (>= 3.0)
     slim (4.0.1)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
@@ -251,6 +253,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   selenium-webdriver
   shoulda-matchers
+  simple_calendar (~> 2.0)
   slim
   spring
   spring-watcher-listen (~> 2.0.0)
