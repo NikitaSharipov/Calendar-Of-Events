@@ -5,4 +5,7 @@
   p
     = f.label :date, 'Creation date'
     = f.date_field :date
+  p
+    = f.label :repeatable, 'Creation date'
+    = f.select :repeatable, Event::REPEATABLE_TYPE
   p= f.submit 'Add event'

@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
   def index
-    @events = Event.where(user: current_user)
+    @events = Services::ServiceCopiedEventInstancies.new(current_user).copied_event_instancies
   end
 
   def all
@@ -25,7 +25,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.permit(:title, :date)
+    params.permit(:title, :date, :repeatable)
   end
 
 end
