@@ -1,4 +1,4 @@
-= form_with url: events_path do |f|
+= form_with model: @event do |f|
   p
     = f.label :title, 'Your event title'
     = f.text_field :title
@@ -8,4 +8,6 @@
   p
     = f.label :repeatable, 'Repetition of an event'
     = f.select :repeatable, Event::REPEATABLE_TYPE
-  p= f.submit 'Add event'
+  p= f.submit 'Edit event'
+
+/ url: event_path(@event)
