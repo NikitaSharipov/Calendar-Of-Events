@@ -5,7 +5,8 @@ class EventsController < ApplicationController
   end
 
   def all
-    @events = Event.all
+    #@events = Event.all
+    @events = Services::ServiceCopiedEventInstancies.new(User.all).copied_event_instancies
     render 'events/index'
   end
 
