@@ -5,6 +5,7 @@ feature 'User can manage events', "
   I'd like to be able to manage events" do
 
   given(:user) { create(:user) }
+  given(:user2) { create(:user) }
 
   background do
     sign_in(user)
@@ -52,5 +53,12 @@ feature 'User can manage events', "
     fill_in 'date', with: Date.tomorrow
     click_on 'Edit'
     expect(page).to have_content("Title can't be blank")
+  end
+
+  scenario "User can click on another user's event and watch event's information" do
+    event = create(:event, title: 'User2Event', user: user2)
+    visit all_events_path
+    click_on 'User2Event'
+    expect(page).to have_content('User2Event')
   end
 end
