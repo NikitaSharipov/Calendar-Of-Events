@@ -2,5 +2,8 @@
   = date
   - events.each do |event|
     .div
-      = event.title
+      -if current_user.author_of?(Event.where(title: event.title).first)
+        = link_to event.title, edit_event_path(Event.where(title: event.title).first)
+      -else
+        = link_to event.title, event_path(Event.where(title: event.title).first)
 = link_to 'Add event', new_event_path

@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :events, dependent: :destroy
+
+  def author_of?(event)
+    id == event.user_id
+  end
 end
