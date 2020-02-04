@@ -63,16 +63,16 @@ feature 'User can manage events', "
   end
 
   scenario 'User can delete event', js: true do
-    create(:event, title: 'UserEvent', user: user)
+    create(:event, title: 'User Event', user: user)
     visit events_path
     click_on 'Delete event'
-    expect(page).to_not have_content('UserEvent')
+    expect(page).to_not have_content('User Event')
   end
 
   scenario 'User can delete repeatable event', js: true do
-    create(:event, title: 'UserEvent', user: user, repeatable: 'day')
+    create(:event, title: 'User Event', user: user, repeatable: 'day')
     visit events_path
     first(:link, 'Delete event').click
-    expect(page).to_not have_content('UserEvent')
+    expect(page).to_not have_content('User Event')
   end
 end
