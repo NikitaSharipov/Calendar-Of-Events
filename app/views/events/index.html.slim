@@ -1,0 +1,12 @@
+.row.justify-content-center
+  .col.col-md-10.text-center
+    = month_calendar attribute: :date, events: @events do |date, events|
+      = date.strftime("%e %B")
+      - events.each do |event|
+        div class = '#{event.title_to_class}'
+          -if current_user.author_of?(Event.where(title: event.title).first)
+            = link_to event.title, edit_event_path(Event.where(title: event.title).first), class: 'btn btn-link'
+            = link_to 'Delete event', event_path(Event.where(title: event.title).first), method: :delete, class: 'delete-event-link btn btn-link'
+          -else
+            = link_to event.title, event_path(Event.where(title: event.title).first), class: 'btn btn-link'
+    = link_to 'Add event', new_event_path, class: 'btn btn-primary'

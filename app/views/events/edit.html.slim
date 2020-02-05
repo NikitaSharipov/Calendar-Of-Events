@@ -1,0 +1,14 @@
+.row.justify-content-center.mt-3
+  .col.col-md-4
+    = form_with model: @event do |f|
+      .form-group
+      p
+        = f.label :title, 'Your event title'
+        = f.text_field :title, class: 'form-control'
+      p
+        = f.label :date, 'Creation date'
+        = f.date_field :date, class: 'form-control'
+      p
+        = f.label :repeatable, 'Repetition of an event'
+        = f.select :repeatable, Event::REPEATABLE_TYPE
+      p= f.submit 'Edit event', class: 'btn btn-primary mb-2'
